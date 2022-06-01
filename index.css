@@ -1,0 +1,164 @@
+/* About */
+
+.Waves {
+    width: 100%;
+    height: auto;
+}
+
+/* Waves Image */
+
+.Header {
+    overflow: hidden;
+    background-color: #044b7f;
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    margin-left: -7.76px;
+}
+
+/* Blue Navbar */
+.navbar {
+    position: fixed; /* Set the navbar to fixed position */
+    overflow: hidden;
+    background-color: #044b7f;
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    margin-left: -7.76px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 12px 16px;
+    padding-bottom: 15px;
+    text-decoration: none;
+}
+
+/* Navbar Buttons */
+
+.navbar a:hover {
+    background: #04395e;
+
+}
+
+/* Change look of Nav Buttons when hovered over */
+
+.About {
+    margin-top: 240px; /* Add a top margin to avoid content overlay */
+
+
+}
+
+/* About Content */
+
+img.AboutPhoto {
+    width: 50%;
+    height: auto;
+}
+
+/* About Photo */
+
+body {
+    background-color: #faf0ca;
+}
+
+/* Setting the Main Background Colour */
+
+
+/* Read */
+
+#SearchInput, #TitleInput, #PasscodeInput {
+    width: auto;
+    font-size: 16px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin-top: 5px;
+    background-color: #044b7f;
+    color: #e5e2d7;
+    border-radius: 4px;
+}
+
+#FileInput {
+    width: auto;
+    font-size: 16px;
+    padding: 9px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin-top: 5px;
+    background-color: #044b7f;
+    color: #e5e2d7;
+    border-radius: 4px;
+}
+
+input[type=file]::file-selector-button {
+    border-radius: 4px;
+    background-color: #e5e2d7;
+}
+
+input[type=file]::file-selector-button:hover {
+    background-color: #f47255;
+}
+
+
+::placeholder {
+    color: #e5e2d7;
+
+}
+
+#Links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#Links li a {
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+    border-radius: 4px;
+}
+
+#Links li a:hover:not(.header) {
+    background-color: #f47255;
+}
+
+.input {
+    position: fixed;
+    margain-left: 540px;
+    width: 12.5%;
+}
+
+
+#searchText, #postText {
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+#PublishButton {
+    width: auto;
+    font-size: 16px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    background-color: #056fbc;
+    color: #e5e2d7;
+    border-radius: 4px;
+}
+
+#PublishButton:hover {
+    background-color: #2d7ab2;
+}
+
+#PublishButton:active {
+    background-color: #f47255;
+}
+        
+        
+        

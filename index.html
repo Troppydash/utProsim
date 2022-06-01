@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>UTProsim | Home</title>
+
+    <link href="index.css" rel="stylesheet">
+</head>
+<body onload="Start()">
+
+<div class="Header">
+    <img src="public/lauraWavePhoto.png" class="Waves" alt="Waves Image"/>
+    <div class="navbar" id="Navbar">
+        <i></i>
+        <a href="#AbtText">About</a>
+        <a href="#searchText">Read</a>
+        <a href="#Post">Post</a>
+    </div>
+</div> <!-- The 3 Nav Buttons -->
+
+
+<div class="About" id="AbtText">
+    <p>
+        It started because of the downfall of another group IB CAS project, The Tartan. The Tartan was a newsletter that
+        published about world events. Through a lack of communication and work being done, it was put on hold. But what
+        about the articles that were written and never published? Were the hours spent on them lost? This was an issue
+        for some people as they wanted their writing out there for people to read (and they didn’t want to throw away
+        precious CAS hours). So, a few people got together, and Ut Prosim was formed.
+    </p>
+    <img src="public/dinoImg.png" class="AboutPhoto" alt="Image" align="right">
+    <p>
+        Ut Prosim is a place for writers (and non-writers) to publish their work and to read other’s works. On Ut
+        Prosim, there is almost limitless possibilities on what you can write. From creative storytelling to informative
+        tutorials. From opinion pieces to scientific reports. You can write anything that you can. (Provided it’s
+        appropriate. meaning not overly violent or erotic)
+    </p>
+    <p>
+        One of Ut Prosim’s many upsides is that when you are writing for the purpose of uploading it to Ut Prosim, you
+        are uploading it to a platform where many other people will see it. Therefore, making it consider your choices
+        and actions, and/ or you could be addressing a global issue within your piece. Thus, making the time taken to
+        write and upload count towards your CAS hours. (Could either be Creativity or Service, depending on your topic)
+    </p>
+    <p>
+        When writing your document, we recommend that you put in about 10 hours. This ensures that what you are saying
+        is well researched and is your best piece of work.
+    </p>
+</div>
+
+<div id="Search">
+    <h2 id="searchText">Search:</h2>
+    <h4>How to Search:</h4>
+    <p>
+        This should be fairly straightforward. Just type in the title of the document you would like to read, click on
+        the title and voila. It should take you to the document.
+    </p>
+    <input type="text" id="SearchInput" onkeyup="SearchSiv()" placeholder="Search for a Piece"> <!-- Search Bar -->
+
+    <ul id="Links"></ul>
+
+</div>
+
+<div id="Post">
+    <h2 id="postText">Post:</h2>
+    <h4>How to Post:</h4>
+    <p>
+        - Input the title of your document in the box labeled "Title of Document" (Fairly simple)
+    </p>
+    <p>
+        - Select the file of your document from your device <i>(This must be in a PDF format)</i>
+    </p>
+    <p>
+        - Input the password given to you by us (If you can't remeber it, ask someone else)
+    </p>
+    <p>
+        - Then obviously, click Publish (If anything goes wrong, you should be told why)
+    </p>
+
+    <div>
+        <input type="text" id="TitleInput" placeholder="Title of Article">
+        <input id="FileInput" name="Upload" type="file" accept="application/pdf">
+
+    </div>
+    <div>
+        <input type="text" id="PasscodeInput" placeholder="Passcode">
+        <button id="PublishButton" onclick="AddTitle()">Publish</button>
+    </div>
+    <h3 id="Upload"></h3>
+
+
+</div>
+
+<script>
+    function SearchSiv() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById('SearchInput');
+        filter = input.value;
+        ul = document.getElementById("Links");
+        li = ul.getElementsByTagName('li');
+
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    } // Clearing those not searched for
+
+
+    async function Start() {
+
+        let elem = document.querySelector('i');
+        let rect = elem.getBoundingClientRect();
+
+        var AboutHeight = rect.top;
+
+        document.getElementById("AbtText").style.marginTop = AboutHeight + "px";
+
+        // Setting position of About Text
+
+
+        const linkList = document.getElementById('Links');
+        const nameData = ['Laura1', 'Terry2', 'Sam3'];
+        // Need to get array name data from server
+
+        const linkData = ['https://docs.google.com/document/d/e/2PACX-1vSyoNl-4_uPcDtzPh2BFKibeE2yatJUtSHzgKcf69yq-HBGYtGKgtWOpwmc2Hki7ur6OReHchdvGHXZ/pub'];
+        // Need to get array link data from server
+
+        for (const d of nameData) {
+
+            var a = document.createElement('a');
+            var link = linkData;
+            a.href = link;
+
+            var linkText = document.createTextNode(d);
+            a.appendChild(linkText);
+
+
+            // a.title = x; //.getName
+            // a.href = "http://example.com"; // .getFile
+
+            var list = document.getElementById("Links");
+            var newItem = document.createElement("li");
+
+            newItem.appendChild(a);
+            list.appendChild(newItem);
+        }
+
+
+        // Getting data from server
+
+
+    } // When thing loaded up
+
+
+    function AddTitle() {
+
+        var Passcode = document.getElementById('PasscodeInput').value;
+
+
+        if (Passcode == 2) { // 2 can be changed to anything
+
+            // Title of article
+            const articleName = document.getElementById('TitleInput').value;
+
+            // Article link
+            const articleLink = document.getElementById('FileInput').value;
+
+            // Upload articleName to server
+            // Upload file link to server
+
+            if (articleName) {
+                if (articleLink) {
+                    // Upload confirmation for user
+                    document.getElementById('Upload').textContent = "Your Article '" + articleName + "'" + " Was Uploaded Successfully!";
+                    // Here is where you write to the server with the new article name and link
+
+                } else {
+                    document.getElementById('Upload').textContent = "Please input a link for your article";
+                }
+            } else {
+                document.getElementById('Upload').textContent = "Please input a title for your article";
+            }
+
+        } else {
+            document.getElementById('Upload').textContent = "Passcode is Incorrect";
+
+        }
+
+
+    } // When button clicked
+
+
+    //        async function getListOfFiles() {
+    //            // /api/listFiles
+    //            const root = "https://miniature-acoustics-production.up.railway.app";
+    //            const response = await fetch("https://miniature-acoustics-production.up.railway.app/api/listFiles");
+    //            console.log(response);
+    //            return await response.json();
+    //
+    //            document.getElementById("ui").textContent = root.open(getFile, wp.png, true);
+    //
+    //        }
+    //
+    // This was my attempt at reading the server
+</script>
+
+</body>
+</html>
