@@ -1,3 +1,21 @@
+/* Global Styles */
+html,
+body {
+    padding: 0;
+    margin: 0;
+
+    width: 100vw;
+
+    font-family: sans-serif, "Noto Sans";
+
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
 /* About */
 
 .Waves {
@@ -12,7 +30,6 @@
     background-color: #044b7f;
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
-    margin-left: -7.76px;
 }
 
 /* Blue Navbar */
@@ -22,7 +39,6 @@
     background-color: #044b7f;
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
-    margin-left: -7.76px;
 }
 
 .navbar a {
@@ -45,16 +61,18 @@
 /* Change look of Nav Buttons when hovered over */
 
 .About {
-    margin-top: 240px; /* Add a top margin to avoid content overlay */
-
+    overflow: auto;
 
 }
 
 /* About Content */
 
 img.AboutPhoto {
-    width: 50%;
+    width: 40%;
+    max-width: 600px;
     height: auto;
+    float: right;
+    margin-left: 0.5rem;
 }
 
 /* About Photo */
@@ -62,6 +80,12 @@ img.AboutPhoto {
 body {
     background-color: #faf0ca;
 }
+
+
+.BodyContainer {
+    padding: 1.25rem;
+}
+
 
 /* Setting the Main Background Colour */
 
@@ -114,25 +138,31 @@ input[type=file]::file-selector-button:hover {
 }
 
 #Links li a {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+#Links li a span {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+#Links li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     border: 1px solid #ddd;
     margin-top: -1px;
     background-color: #f6f6f6;
     padding: 12px;
     text-decoration: none;
-    font-size: 18px;
     color: black;
-    display: block;
     border-radius: 4px;
 }
 
 #Links li a:hover:not(.header) {
     background-color: #f47255;
-}
-
-.input {
-    position: fixed;
-    margain-left: 540px;
-    width: 12.5%;
 }
 
 
@@ -159,6 +189,14 @@ input[type=file]::file-selector-button:hover {
 #PublishButton:active {
     background-color: #f47255;
 }
-        
-        
-        
+
+@media only screen and (max-width: 600px) {
+    #Links li a {
+        flex-direction: column;
+    }
+
+    img.AboutPhoto {
+        max-width: 90vw;
+        width: 100%;
+    }
+}
