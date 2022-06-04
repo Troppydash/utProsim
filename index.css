@@ -4,11 +4,11 @@ body {
     padding: 0;
     margin: 0;
 
-    width: 100vw;
-
     font-family: sans-serif, "Noto Sans";
 
     scroll-behavior: smooth;
+
+    overflow-x: hidden;
 }
 
 * {
@@ -72,7 +72,6 @@ img.AboutPhoto {
     max-width: 600px;
     height: auto;
     float: right;
-    margin-left: 0.5rem;
 }
 
 /* About Photo */
