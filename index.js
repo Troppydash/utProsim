@@ -1,12 +1,15 @@
 // URL DATA
 const URLS = {
-    LIST: 'https://miniature-acoustics-production.up.railway.app/api/listFiles',
-    GET: 'https://miniature-acoustics-production.up.railway.app/api/getFile',
+    LIST: 'https://miniature-acoustics-production.up.railway.app/api/listFiles?user=utprosim',
+    GET: 'https://miniature-acoustics-production.up.railway.app/api/getFile?user=utprosim',
     UPLOAD: 'https://miniature-acoustics-production.up.railway.app/api/newFile'
 }
 
 
 async function UploadFile({name, file}) {
+    // replace all spaces with underscores
+    name = name.replace(/\s/g, '_');
+
     if (!name.endsWith('.pdf')) {
         name += '.pdf';
     }
@@ -14,7 +17,8 @@ async function UploadFile({name, file}) {
     let formData = new FormData();
     formData.append('file', file.files[0]);
     formData.append('name', name);
-    formData.append('passcode', [ 112, 97, 115, 115, 99, 111, 100, 101 ].map(i => String.fromCharCode(i)).join(''));
+    formData.append('user', 'utprosim');
+    formData.append('password', [ 112, 97, 115, 115, 99, 111, 100, 101 ].map(i => String.fromCharCode(i)).join(''));
 
     const response = await fetch(URLS.UPLOAD, {
         method: 'POST',
@@ -72,13 +76,15 @@ async function Start() {
         a.addEventListener('click', ((link) => (e) => {
             e.preventDefault();
             window.open(link, '_blank');
-        })(`${URLS.GET}?name=${name}`));
-        a.href = `${URLS.GET}?name=${name}`;
+        })(`${URLS.GET}&name=${name}`));
+        a.href = `${URLS.GET}&name=${name}`;
 
         let safename = name;
         if ( name.lastIndexOf('.') !== -1) {
             safename = name.slice(0, name.lastIndexOf('.'));
         }
+        // replace all _ with spaces
+        safename = safename.replace(/_/g, ' ');
         a.innerText = safename;
 
         const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -177,3 +183,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 //        }
 //
 // This was my attempt at reading the server
+
+
+// TODO: Fix special characters
+// and fix deleting files, add admin page

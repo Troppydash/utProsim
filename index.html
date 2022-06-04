@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>UTProsim</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <link href="index.css" rel="stylesheet">
 </head>
@@ -23,10 +23,11 @@
         <h1 id="searchText">Search:</h1>
         <h4>How to Search:</h4>
         <p>
-            This should be fairly straightforward. Just type in the title of the document you would like to read, click on
+            This should be fairly straightforward. Just type in the title of the document you would like to read, click
+            on
             the title and voila. It should take you to the document.
         </p>
-        <input type="text" id="SearchInput" onkeyup="SearchSiv()" placeholder="Search for a Piece"> <!-- Search Bar -->
+        <input id="SearchInput" onkeyup="SearchSiv()" placeholder="Search for a Piece"> <!-- Search Bar -->
 
         <ul id="Links">
             <li>Loading...</li>
@@ -62,7 +63,7 @@
             <div>
                 <label for="PasscodeInput">
                     Passcode: <br/>
-                    <input type="text" id="PasscodeInput" placeholder="Passcode" type="password">
+                    <input type="password" autocomplete="new-password" id="PasscodeInput" placeholder="Passcode">
                 </label>
                 <button id="PublishButton" type="submit">Publish</button>
             </div>
@@ -73,33 +74,41 @@
     <div class="About" id="AbtText">
         <h1>About Us</h1>
         <p>
-            It started because of the downfall of another group IB CAS project, The Tartan. The Tartan was a newsletter that
-            published about world events. Through a lack of communication and work being done, it was put on hold. But what
-            about the articles that were written and never published? Were the hours spent on them lost? This was an issue
-            for some people as they wanted their writing out there for people to read (and they didn't want to throw away
+            It started because of the downfall of another group IB CAS project, The Tartan. The Tartan was a newsletter
+            that
+            published about world events. Through a lack of communication and work being done, it was put on hold. But
+            what
+            about the articles that were written and never published? Were the hours spent on them lost? This was an
+            issue
+            for some people as they wanted their writing out there for people to read (and they didn't want to throw
+            away
             precious CAS hours). So, a few people got together, and Ut Prosim was formed.
         </p>
         <img src="public/dinoImg.png" class="AboutPhoto" alt="Image">
         <p>
             Ut Prosim is a place for writers (and non-writers) to publish their work and to read other's works. On Ut
-            Prosim, there is almost limitless possibilities on what you can write. From creative storytelling to informative
+            Prosim, there is almost limitless possibilities on what you can write. From creative storytelling to
+            informative
             tutorials. From opinion pieces to scientific reports. You can write anything that you can. (Provided it's
             appropriate. meaning not overly violent or erotic)
         </p>
         <p>
-            One of Ut Prosim's many upsides is that when you are writing for the purpose of uploading it to Ut Prosim, you
-            are uploading it to a platform where many other people will see it. Therefore, making it consider your choices
-            and actions, and/ or you could be addressing a global issue within your piece. Thus, making the time taken to
-            write and upload count towards your CAS hours. (Could either be Creativity or Service, depending on your topic)
+            One of Ut Prosim's many upsides is that when you are writing for the purpose of uploading it to Ut Prosim,
+            you
+            are uploading it to a platform where many other people will see it. Therefore, making it consider your
+            choices
+            and actions, and/ or you could be addressing a global issue within your piece. Thus, making the time taken
+            to
+            write and upload count towards your CAS hours. (Could either be Creativity or Service, depending on your
+            topic)
         </p>
         <p>
-            When writing your document, we recommend that you put in about 10 hours. This ensures that what you are saying
+            When writing your document, we recommend that you put in about 10 hours. This ensures that what you are
+            saying
             is well researched and is your best piece of work.
         </p>
     </div>
 </div>
-
-
 
 
 <script src="index.js"></script>
